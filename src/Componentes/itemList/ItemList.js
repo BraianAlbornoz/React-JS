@@ -3,16 +3,20 @@ import { Grid } from "@mui/material"
 import Item from "../Item/Item"
 
 const ItemList =( {products} )=>{
+    
+    
+
     return(
         <>
             <Grid container spacing={2}>
                 {
-                    products.map((products)=> {
+                    products.map( (producto) => {
+                        
                         return(
 
-                            <Grid item md={3} key={products.id} >
-
-                                <Item products={products} />
+                            <Grid item md={3} key={producto.id} >
+                                
+                                <Item products={producto} key={producto.id} />
 
                             </Grid>
                         )

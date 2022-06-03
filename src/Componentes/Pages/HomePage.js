@@ -5,7 +5,7 @@ import ItemListContainer from "../ItemListContainer/ItemListContainer"
 const HomePage = () =>{
     return(
         <Container className='general-container'>
-          <ItemListContainer title={'Producto Recomendado'} />
+          <ItemListContainer title={'Productos'} />
         </Container>
     )
 }

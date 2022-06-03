@@ -5,11 +5,12 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 //Componentes
 import Cartwidget from './Cartwidget';
-import BasicMenu from './Menu';
+import ListaProducto from './ListaProducto';
 
 
 
 export default function ButtonAppBar() {
+ 
   return (
     <>
     <AppBar className='AppBar'>
@@ -23,15 +24,13 @@ export default function ButtonAppBar() {
         <div className='ContainerButton'>
             
           <Button variant="contained"> <Link to="/">Home</Link></Button>
-          <BasicMenu />
+          <ListaProducto />
           <Button variant="contained"><Link to="/Contacto">Contacto</Link></Button>
+
         </div>
           
+
         <Cartwidget/>
-
-          
-          
-
 
       </Toolbar>
     </AppBar>

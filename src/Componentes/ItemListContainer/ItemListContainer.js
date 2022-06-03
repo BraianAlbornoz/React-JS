@@ -1,7 +1,7 @@
 import { useEffect,useState } from 'react';
-import './ItemListContainer.css'
 import {Grid} from '@mui/material';
 // Componentes
+import './ItemListContainer.css'
 import ItemList from '../itemList/ItemList';
 import productosMock from '../../Utils/ProductosMock';
 
@@ -22,13 +22,13 @@ const ItemListContainer = ( {title}) =>{
         getProducts()
         .then( (response) => {
          setProducts(response)
-         console.log(response)
+        //  console.log(response)
         })
         .catch( (err) => {
-             console.log("Fallo la llamada.", err)
+            // console.log("Fallo la llamada.", err)
         })
         .finally( () => {
-             console.log("termino la promesa")
+            // console.log("termino la promesa")
         })
     }, [])
 
