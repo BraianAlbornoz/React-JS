@@ -1,0 +1,16 @@
+.AppBar{
+    position:static !important;
+}
+.NavBar{
+    justify-content: space-between;
+}
+.ContainerButton Button{
+     margin-left: 2rem;
+     
+}
+.ContainerButton Button a{
+   
+    text-decoration: none;
+    color: white;
+}
+

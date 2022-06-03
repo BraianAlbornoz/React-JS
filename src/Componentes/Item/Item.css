@@ -1,0 +1,13 @@
+.Carditem{
+    display: flex;
+    flex-direction: column;
+}
+.Carditem p{
+    font-size: 1.5rem;
+}
+.Carditem span{
+    margin-bottom: 1rem;
+}
+.Carditem img {
+    width: 100%;
+}
