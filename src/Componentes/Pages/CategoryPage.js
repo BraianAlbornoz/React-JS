@@ -11,10 +11,24 @@ const CategoryPage=()=>{
     const { category } = useParams()
 
 
+    const getProducts = () => {
+        return new Promise( (resolve, reject) => {
+            // setTimeout(() => {
+                resolve(productosMock)
+            // }, 2000)
+        })
+    }
+    
     useEffect( () => {
         setProductos([])
-        productCategoryFilter(productosMock)
+        getProducts()
+        .then( (response) => {
+         productCategoryFilter(response)
+        })
+        
     }, [category])
+
+
     
     
     const productCategoryFilter = (array) =>{
