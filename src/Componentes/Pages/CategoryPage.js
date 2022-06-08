@@ -23,21 +23,28 @@ const CategoryPage=()=>{
         setProductos([])
         getProducts()
         .then( (response) => {
-         productCategoryFilter(response)
+        productCategoryFilter(response)
         })
+
+        const productCategoryFilter = (arrayResponse) =>{
+            return(
+                arrayResponse.map( (item) =>{
+                
+                    if(item.category === category){
+                        return setProductos ( productos => [...productos,item] )
+                    }
+                    else{
+                        return console.log("Usted esta en la categoria: ",category)
+                    }
+                })
+            )
+        }
         
     }, [category])
 
 
     
-    
-    const productCategoryFilter = (array) =>{
-        return array.map( (item) =>{
-            if(item.category == category){
-                return setProductos ( productos => [...productos,item] )
-            }
-        })
-    }
+   
     
   
     return(
