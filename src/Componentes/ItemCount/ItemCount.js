@@ -4,7 +4,7 @@ import { useState } from 'react';
 //componente
 import './ItemCount.css';
 
-const ItemCount = ( {products, setShowButton } ) =>{
+const ItemCount = ( {products} ) =>{
 
     const [count,setCount] = useState (1)
     
@@ -35,7 +35,7 @@ const ItemCount = ( {products, setShowButton } ) =>{
                 <Button variant="outlined" onClick={addCount} >+</Button>
             </div>
 
-            <Button variant="outlined" onClick={ () => setShowButton(true) }>Agregar Producto</Button>
+            <Button variant="outlined" >Agregar Producto</Button>
 
             {/* <Button variant="outlined" > <Link to={`/Detalle/${products.id}`}>Ver Detalle</Link> </Button> */}
 

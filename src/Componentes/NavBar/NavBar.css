@@ -14,3 +14,81 @@
     color: white;
 }
 
+/* --------------- */
+/* CartWidget  */
+/* --------------- */
+
+.item-cart {
+    float: left;
+    width: 300px;
+    display:flex;padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-image {
+    width: 45%;
+}
+
+.cart-image img {
+    width: 100%;
+}
+
+.cart-info {
+    padding: 5px 15px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.cart-contador {
+    padding: 5px 15px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.cart-Delet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+.cart-Delet button {
+    background: none;
+    border: none;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list {
+    padding-bottom: 0px !important;
+}
+
+
+.cart-info p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.cart-info span {
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+.container-item-list-cart {
+    display: flex;
+    flex-direction: column;
+}
+.container-item-total-cart{
+    float: left;
+    width: 300px;
+    display:flex;padding: 10px;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-around;
+}
+
+

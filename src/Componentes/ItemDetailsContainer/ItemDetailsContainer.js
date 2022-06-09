@@ -10,13 +10,16 @@ const ItemDetailsContainer = ()=>{
 
     
     const productFilter = productosMock.find( (producto) => {
-        return producto.id == id
+        return producto.id === id
     })
 
-    useEffect( () => {
+    useEffect(() => {
+       
        console.log("el producto filtrado es: ", productFilter)
        setDetails(productFilter)
-    }, [])
+     
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+     }, []) 
 
 
 

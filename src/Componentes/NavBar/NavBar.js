@@ -13,27 +13,27 @@ export default function ButtonAppBar() {
  
   return (
     <>
-    <AppBar className='AppBar'>
+      <AppBar className='AppBar'>
 
-      <Toolbar className='NavBar'>
+        <Toolbar className='NavBar'>
 
-        <div className='ContainerLogo'>
-          <Link to="/"> <img src='../favicon.ico' alt='AnimeStore'/> </Link>
-        </div>
+          <div className='ContainerLogo'>
+            <Link to="/"> <img src='../favicon.ico' alt='AnimeStore'/> </Link>
+          </div>
 
-        <div className='ContainerButton'>
+          <div className='ContainerButton'>
+              
+            <Button variant="contained"> <Link to="/">Home</Link></Button>
+            <ListaProducto />
+            <Button variant="contained"><Link to="/Contacto">Contacto</Link></Button>
+
+          </div>
             
-          <Button variant="contained"> <Link to="/">Home</Link></Button>
-          <ListaProducto />
-          <Button variant="contained"><Link to="/Contacto">Contacto</Link></Button>
 
-        </div>
-          
+          <Cartwidget/>
 
-        <Cartwidget/>
-
-      </Toolbar>
-    </AppBar>
+        </Toolbar>
+      </AppBar>
     </>
     
   );
