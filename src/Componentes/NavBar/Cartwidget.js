@@ -13,8 +13,6 @@ import './NavBar.css'
 const Cartwidget =()=>{
     const { cartListItems,totalPrice,totalCantidad,deleteItemCart,deleteAll } = useContext(CartWidgetContext)
     
-    
-
     const [anchorEL,setAnchorEl] = useState(null)
     const handleOpenMenu=(e)=>{
         setAnchorEl (e.currentTarget)
@@ -61,7 +59,8 @@ const Cartwidget =()=>{
                                             </div>
 
                                             <div className='cart-contador'>
-                                                <span>{item.cantidad} Unidad </span>
+                                                <span>{item.cantidad}Unidad</span>
+                                                <span>(Stock: {item.stock})</span>
                                             </div>
 
                                             <div className='cart-Delet'>
