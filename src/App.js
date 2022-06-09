@@ -7,20 +7,24 @@ import DetailPage from './Componentes/Pages/DetailPage';
 import NotFoundPage from './Componentes/Pages/NotFoundPage';
 import CategoryPage from './Componentes/Pages/CategoryPage';
 import { CartWidgetProvider } from './Componentes/Context/CartWidgetContext';
+
+
 function App() {
   return (
     <div className="App">
-      <CartWidgetProvider > {/* Englobamos para pasar informacion */}
-        <BrowserRouter>
-          <ButtonAppBar/>
-          <Routes>
-            <Route exact path='/' element={<HomePage/>} />
-            <Route exact path='/Detalle/:id' element={<DetailPage/>}/>
-            <Route exact path='/producto/:category' element={<CategoryPage/>}/>
-            <Route exact path='*' element={<NotFoundPage/>}/>
-          </Routes>
-        </BrowserRouter>
-      </CartWidgetProvider>{/* Englobamos para pasar informacion */}
+      
+        <CartWidgetProvider > {/* Englobamos para pasar informacion */}
+          <BrowserRouter>
+            <ButtonAppBar/>
+            <Routes>
+              <Route exact path='/' element={<HomePage/>} />
+              <Route exact path='/Detalle/:id' element={<DetailPage/>}/>
+              <Route exact path='/producto/:category' element={<CategoryPage/>}/>
+              <Route exact path='*' element={<NotFoundPage/>}/>
+            </Routes>
+          </BrowserRouter>
+        </CartWidgetProvider>{/* Englobamos para pasar informacion */}
+      
     </div>
   );
 }

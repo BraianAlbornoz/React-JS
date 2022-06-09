@@ -2,28 +2,38 @@ import { createContext, useState } from "react";
 
 
 const CartWidgetContext = createContext()
+
 const CartWidgetProvider = ({children}) => {
 
+    
     const [cartListItems, setCartListItems] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
     const [totalCantidad, setTotalCantidad] = useState (0)
 
     const addProductToCart = (products) => {
-        
+
         let isInCart = cartListItems.find( (itemInCart) => itemInCart.id === products.id);
             
         if(!isInCart){
+            
+            console.log("Agregaste products NEW: ",products)
             setTotalPrice(totalPrice + products.price)
             setTotalCantidad(totalCantidad + products.cantidad)
-            setCartListItems( [ ...cartListItems, {...products } ])
-            // setCartListItems (cartListItems => [...cartListItems, products,])
-            console.log("IsInCart",isInCart)
-            console.log("Products",products)
+            setCartListItems( [ ...cartListItems, {...products, cantidad: 1 } ])
+            // setCartListItems (cartListItems => [...cartListItems, products,]
+           
         }else{
             setCartListItems(
                 cartListItems.map( (itemInCart) => {
                     if( itemInCart.id === products.id ){
-                        return{...isInCart, cantidad: isInCart.cantidad + 1 }
+                        if(itemInCart.cantidad < products.stock){
+                            setTotalCantidad(totalCantidad + products.cantidad)
+                            setTotalPrice(totalPrice + products.price)
+                            console.log("Repetiste Producto: ",isInCart)
+                            return{...isInCart, cantidad: isInCart.cantidad + 1, price: isInCart.price + products.price }
+                        }else{
+                            return(itemInCart)
+                        }
                         
                     }else{
                         return(itemInCart)
@@ -31,16 +41,15 @@ const CartWidgetProvider = ({children}) => {
                     
                 })
             )
-            setTotalPrice(totalPrice + products.price)
-            setTotalCantidad(totalCantidad + products.cantidad)
-            console.log("IsInCart",isInCart)
-            console.log("Products",products)
+           
         }
 
     }
 
     const deleteItemCart = (products) => {
+
         let isInCart = cartListItems.find( (itemInCart) => itemInCart.id === products.id);
+        
         if(isInCart.cantidad === 1){
             setCartListItems(
                 cartListItems.filter( (itemInCart) => itemInCart.id !== products.id )
@@ -51,7 +60,7 @@ const CartWidgetProvider = ({children}) => {
             setCartListItems(
                 cartListItems.map( (itemInCart) =>{
                     if(itemInCart.id === products.id){
-                        return{...isInCart, cantidad: isInCart.cantidad - 1}
+                        return{...isInCart, cantidad: isInCart.cantidad - 1, price: isInCart.price - products.priceAct  }
                         
                     }else{
                         return (itemInCart)
@@ -59,10 +68,15 @@ const CartWidgetProvider = ({children}) => {
                 })
             )
             console.log("IsInCart",isInCart)
-            console.log("Products",products)
-            setTotalPrice(totalPrice - products.price)
+
+           
+            setTotalPrice(totalPrice - products.priceAct)
             setTotalCantidad(totalCantidad - 1)
         }
+    }
+
+    const deleteAll = () =>{
+         setCartListItems([])
     }
 
     const data ={
@@ -70,7 +84,8 @@ const CartWidgetProvider = ({children}) => {
         addProductToCart,
         totalPrice,
         totalCantidad,
-        deleteItemCart
+        deleteItemCart,
+        deleteAll,
     }
 
     return(

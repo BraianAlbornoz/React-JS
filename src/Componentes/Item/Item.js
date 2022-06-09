@@ -13,7 +13,7 @@ import  CartWidgetContext  from '../Context/CartWidgetContext';
 const Item = ({products})=> {
 
   const { addProductToCart } = useContext(CartWidgetContext)
-
+  
   return (
 
     <Card>
@@ -36,6 +36,7 @@ const Item = ({products})=> {
         > 
           Agrega al carrito 
         </Button>
+
 
       </CardContent>
     </Card>

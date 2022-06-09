@@ -8,8 +8,11 @@ import CartWidgetContext from '../Context/CartWidgetContext';
 //componentes 
 import './NavBar.css'
 
+
+
 const Cartwidget =()=>{
-    const { cartListItems,totalPrice,totalCantidad,deleteItemCart } = useContext(CartWidgetContext)
+    const { cartListItems,totalPrice,totalCantidad,deleteItemCart,deleteAll } = useContext(CartWidgetContext)
+    
     
 
     const [anchorEL,setAnchorEl] = useState(null)
@@ -58,7 +61,7 @@ const Cartwidget =()=>{
                                             </div>
 
                                             <div className='cart-contador'>
-                                                <span>{item.cantidad} Unidad</span>
+                                                <span>{item.cantidad} Unidad </span>
                                             </div>
 
                                             <div className='cart-Delet'>
@@ -79,7 +82,14 @@ const Cartwidget =()=>{
                                         <div className='item-total-cantidad'>
                                             <p>Uni:{totalCantidad}</p>
                                         </div>
+
                                         
+                                    </div>
+
+                                    <div className='cart-Delet-all'>
+                                        <Button onClick={()=> { deleteAll() }}>
+                                             Clear All
+                                        </Button>
                                     </div>
                             
                             
