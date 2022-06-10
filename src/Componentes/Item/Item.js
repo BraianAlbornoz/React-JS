@@ -2,17 +2,14 @@ import './Item.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Link } from "react-router-dom"
-import { Button } from '@mui/material';
-import { useContext } from 'react';
 // Componentes
-import  CartWidgetContext  from '../Context/CartWidgetContext';
-// import ItemCount from '../ItemCount/ItemCount.js';
+import ItemCount from '../ItemCount/ItemCount.js';
 
 
 
 const Item = ({products})=> {
 
-  const { addProductToCart } = useContext(CartWidgetContext)
+  
   
   return (
 
@@ -26,18 +23,9 @@ const Item = ({products})=> {
 
         <p>{products.title}</p>
         <span>{products.price}</span>
+
+        <ItemCount products={products} />
         
-
-        {/* <ItemCount products={products} /> */}
-        
-        <Button 
-          variant='contained'
-          onClick={ () => addProductToCart(products) }
-        > 
-          Agrega al carrito 
-        </Button>
-
-
       </CardContent>
     </Card>
 

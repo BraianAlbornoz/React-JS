@@ -1,5 +1,6 @@
 import { CardContent,Typography } from "@mui/material"
 
+
 //component
 import ItemCount from "../ItemCount/ItemCount"
 import './ItemDetails.css'
@@ -30,11 +31,12 @@ const ItemDetails =( {data} )=>{
                     ${data.price}
                 </Typography>
                 <Typography variant="h5" component="div">
-                    STOCK: {data.stock}uni.
+                    STOCK: {data.stock} uni.
                 </Typography>
 
-                
-                <ItemCount products={data}/> 
+                <ItemCount 
+                    products={data}
+                /> 
             
                            
                 

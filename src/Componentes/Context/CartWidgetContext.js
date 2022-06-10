@@ -10,27 +10,47 @@ const CartWidgetProvider = ({children}) => {
     const [totalPrice, setTotalPrice] = useState(0)
     const [totalCantidad, setTotalCantidad] = useState (0)
 
-    const addProductToCart = (products) => {
+    const addProductToCart = (products,quantity) => {
 
         let isInCart = cartListItems.find( (itemInCart) => itemInCart.id === products.id);
             
         if(!isInCart){
             
             console.log("Agregaste products NEW: ",products)
-            setTotalPrice(totalPrice + products.price)
-            setTotalCantidad(totalCantidad + products.cantidad)
-            setCartListItems( [ ...cartListItems, {...products, cantidad: 1 } ])
-            // setCartListItems (cartListItems => [...cartListItems, products,]
+
+            setTotalPrice(totalPrice + products.price * quantity)
+            setTotalCantidad(totalCantidad + quantity)
+
+            setCartListItems( 
+                [ 
+                    ...cartListItems , 
+                    {...products,
+                    cantidad: quantity ,
+                    price: products.price * quantity,
+                    stock: products.stock-quantity 
+                    } 
+                ])
+            
+            
            
         }else{
             setCartListItems(
                 cartListItems.map( (itemInCart) => {
                     if( itemInCart.id === products.id ){
-                        if(itemInCart.cantidad < products.stock){
-                            setTotalCantidad(totalCantidad + products.cantidad)
-                            setTotalPrice(totalPrice + products.price)
-                            console.log("Repetiste Producto: ",isInCart)
-                            return{...isInCart, cantidad: isInCart.cantidad + 1, price: isInCart.price + products.price }
+                        if( quantity <= itemInCart.stock ){
+                            
+                                setTotalCantidad(totalCantidad + quantity)
+                                setTotalPrice(totalPrice + products.price * quantity)
+                                console.log(" Repetiste el producto : ",itemInCart)
+                                return{
+                                    ...itemInCart,
+                                     cantidad: itemInCart.cantidad + quantity  , 
+                                     price: (itemInCart.cantidad + quantity) * products.price,
+                                     stock: itemInCart.stock - quantity ,
+                                    
+                                    }
+                                    
+                            
                         }else{
                             return(itemInCart)
                         }

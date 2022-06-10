@@ -1,24 +1,34 @@
 import { Button } from "@mui/material";
-import { useState } from 'react';
+
 // import { Link } from "react-router-dom";
 //componente
 import './ItemCount.css';
+import { useContext } from 'react';
+import CartWidgetContext from '../Context/CartWidgetContext';
+import { useState } from "react"
+
+    
 
 const ItemCount = ( {products} ) =>{
 
-    const [count,setCount] = useState (1)
-    
+    const { addProductToCart } = useContext(CartWidgetContext)
+    const [quantity ,setQuantity] = useState(1)
+
 
     const addCount= () => {
-       if(count < products.stock){
-        setCount(count + 1)
+       if(quantity < products.stock){
+           
+            setQuantity(
+                quantity + 1,
+                )
        }
         
     }
     
     const removeCount = () => {
-        if(count > 1 ){
-            setCount(count - 1)
+        if(quantity > 1 ){
+            
+            setQuantity(quantity -1)
         }
     }
 
@@ -31,11 +41,11 @@ const ItemCount = ( {products} ) =>{
 
             <div className="ItemCount" >   
                 <Button variant="outlined" onClick={removeCount} >-</Button>
-                <p>{count}</p>
+                <p>{quantity}</p>
                 <Button variant="outlined" onClick={addCount} >+</Button>
             </div>
 
-            <Button variant="outlined" >Agregar Producto</Button>
+            <Button variant="outlined" onClick={ () => addProductToCart(products,quantity) }>Agregar Producto</Button>
 
             {/* <Button variant="outlined" > <Link to={`/Detalle/${products.id}`}>Ver Detalle</Link> </Button> */}
 
