@@ -4,6 +4,7 @@ import Menu from '@mui/material/Menu';
 import { useState , useContext } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CartWidgetContext from '../Context/CartWidgetContext';
+import { Link } from 'react-router-dom';
 
 //componentes 
 import './NavBar.css'
@@ -88,6 +89,12 @@ const Cartwidget =()=>{
                                     <div className='cart-Delet-all'>
                                         <Button onClick={()=> { deleteAll() }}>
                                              Clear All
+                                        </Button>
+                                    </div>
+
+                                    <div className='cart-Delet-all'>
+                                        <Button>
+                                             <Link to={'/cart'}> Finaliza Compra </Link> 
                                         </Button>
                                     </div>
                             

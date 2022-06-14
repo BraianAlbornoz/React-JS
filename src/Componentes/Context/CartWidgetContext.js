@@ -97,6 +97,8 @@ const CartWidgetProvider = ({children}) => {
 
     const deleteAll = () =>{
          setCartListItems([])
+         setTotalPrice(0)
+         setTotalCantidad(0)
     }
 
     const data ={

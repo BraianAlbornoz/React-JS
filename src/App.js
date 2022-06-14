@@ -7,7 +7,7 @@ import DetailPage from './Componentes/Pages/DetailPage';
 import NotFoundPage from './Componentes/Pages/NotFoundPage';
 import CategoryPage from './Componentes/Pages/CategoryPage';
 import { CartWidgetProvider } from './Componentes/Context/CartWidgetContext';
-
+import Cart from './Componentes/Pages/Cart';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
               <Route exact path='/Detalle/:id' element={<DetailPage/>}/>
               <Route exact path='/producto/:category' element={<CategoryPage/>}/>
               <Route exact path='*' element={<NotFoundPage/>}/>
+              <Route exact path='/cart' element= {<Cart />}/>
             </Routes>
           </BrowserRouter>
         </CartWidgetProvider>{/* Englobamos para pasar informacion */}
