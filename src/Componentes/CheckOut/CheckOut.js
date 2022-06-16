@@ -18,8 +18,8 @@ const CheckOut = () => {
                     <div className='col-cart-table__head'>
                         <h2>Producto</h2>
                         <h2>Descripcion</h2>
-                        <h2>Cantidad</h2>
                         <h2>Precio</h2>
+                        <h2>Cantidad</h2>
                         <h2>Quitar</h2>
                     </div>
                          {cartListItems.length === 0 ? 
@@ -30,7 +30,7 @@ const CheckOut = () => {
                                 <div>
                                     {cartListItems.map( (item) => {
                                         return(
-                                            <div className='cart-table__content' >
+                                            <div className='cart-table__content' key={item.id} >
                                                 <div className='cart-table__content-img'>
                                                     <img src={`/${item.image}`} alt='Por Completar' />
                                                 </div>

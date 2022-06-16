@@ -80,7 +80,7 @@ const CartWidgetProvider = ({children}) => {
             setCartListItems(
                 cartListItems.map( (itemInCart) =>{
                     if(itemInCart.id === products.id){
-                        return{...isInCart, cantidad: isInCart.cantidad - 1, price: isInCart.price - products.priceAct  }
+                        return{...isInCart, cantidad: isInCart.cantidad - 1, price: isInCart.price - products.priceAct ,stock:isInCart.stock + 1 }
                         
                     }else{
                         return (itemInCart)
