@@ -26,7 +26,7 @@ const Cartwidget =()=>{
     return(
         <>
 
-                <Button variant='contained' onClick={handleOpenMenu} aria-controls='menuCartWidge'>
+                <Button variant='contained' onClick={handleOpenMenu} aria-controls='menuCartWidge' className='cart-Icon-shopping'>
                     <ShoppingCartIcon/>
                 </Button>
 

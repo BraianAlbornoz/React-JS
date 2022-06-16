@@ -44,7 +44,7 @@ const ItemListContainer = ( {title}) =>{
         <> 
             <h2>{title}</h2>
 
-            <Grid >
+            <Grid>
                 <ItemList products={products}/>
             </Grid>
             

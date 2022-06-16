@@ -56,7 +56,7 @@ const CategoryPage=()=>{
   
     return(
 
-        <Grid>
+        <Grid className='item-list-category-container'>
             <ItemList products={productos}/>
         </Grid>
     )

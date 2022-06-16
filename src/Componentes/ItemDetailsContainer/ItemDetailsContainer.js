@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { doc, getDoc } from "firebase/firestore"
 //Componentes
 import ItemDetails from "../ItemDetails/ItemDetails"
+import './ItemDetailsContainer.css'
 // import productosMock from "../../Utils/ProductosMock"
 import db from "../../Utils/FirebaseSettings"
 
@@ -36,8 +37,9 @@ const ItemDetailsContainer = ()=>{
 
 
     return(
-        
-        <ItemDetails data={details}/>
+        <div className="item-detail-container">
+            <ItemDetails data={details}/>
+        </div>
 
     )
 }

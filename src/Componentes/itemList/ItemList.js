@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material"
 // Componentes
 import Item from "../Item/Item"
+import './ItemList.css'
 
 const ItemList =( {products} )=>{
     
@@ -8,7 +9,7 @@ const ItemList =( {products} )=>{
 
     return(
         <>
-            <Grid container spacing={2}>
+            <Grid container spacing={4}>
                 {
                     products.map( (producto) => {
                         

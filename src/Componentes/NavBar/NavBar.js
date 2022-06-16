@@ -21,7 +21,7 @@ export default function ButtonAppBar() {
         <Toolbar className='NavBar'>
 
           <div className='ContainerLogo'>
-            <Link to="/"> <img src='../favicon.ico' alt='AnimeStore'/> </Link>
+            <Link to="/"> <img src='../AnimeStore-Logo.jpg' alt='AnimeStore'/> </Link>
           </div>
 
           <div className='ContainerButton'>
