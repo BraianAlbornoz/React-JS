@@ -12,7 +12,7 @@ import './NavBar.css'
 
 
 const Cartwidget =()=>{
-    const { cartListItems,totalPrice,totalCantidad,deleteItemCart,deleteAll } = useContext(CartWidgetContext)
+    const { cartListItems,totalPrice,totalCantidad,deleteItemCart } = useContext(CartWidgetContext)
     
     const [anchorEL,setAnchorEl] = useState(null)
     const handleOpenMenu=(e)=>{
@@ -87,15 +87,10 @@ const Cartwidget =()=>{
                                     </div>
 
                                     <div className='cart-Delet-all'>
-                                        <Button onClick={()=> { deleteAll() }}>
-                                             Clear All
-                                        </Button>
-                                    </div>
-
-                                    <div className='cart-Delet-all'>
-                                        <Button>
+                                        <Button variant="contained">
                                              <Link to={'/cart'}> Finaliza Compra </Link> 
                                         </Button>
+                                        
                                     </div>
                             
                             

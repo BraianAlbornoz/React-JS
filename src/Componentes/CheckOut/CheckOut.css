@@ -30,7 +30,7 @@
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 15px;
+    
 }
 
 .cart-table__content-title {
@@ -42,6 +42,35 @@
     justify-content:flex-end;
     padding-right: 6rem;
 }
+.cart-items-container {
+    padding-top:5rem ;
+}
 
+
+button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-sghohy-MuiButtonBase-root-MuiButton-root a {
+    color: white;
+}
+
+.btn-delete {
+    color: black !important;
+}
+.cart-checkout__total {
+    margin: 1rem;
+}
+/* Formulario */
+form.form-contact {
+    display: flex;
+    flex-direction: column;
+}
+.form-contact h3{
+    text-align: center;
+}
+form.form-contact > div{
+    margin: 0.5rem;
+}
+/* Post Formulario */
+.container-orden-generada{
+    text-align: center;
+}
 
 
